@@ -34,7 +34,7 @@ const Home = () => {
             />
             <div>
               {projects.map((project,index)=>(
-                <a className="item" href={project.projectLink} title='Opens in a new tab!' target='_blank' key={index}>
+                <a className="item" href={project.projectLink} title='Opens in a new tab!' target='_blank' rel='noreferrer' key={index}>
                   <div><AnimatedProject image={project.projectThumb}/></div>
                   <h3>{project.projectTitle}</h3>
                 </a>

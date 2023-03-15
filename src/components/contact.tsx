@@ -8,7 +8,7 @@ export const Contact = () => {
     <div id="contact" className="section">
       <div>
         <p>Let's connect today</p>
-        <a href={`mailto:${email}`} target="_blank" className="socialLink">
+        <a className="socialLink" href={`mailto:${email}`} target="_blank" rel="noreferrer" title='Prompts to send a mail!'>
           {email}
         </a>
       </div>
@@ -20,8 +20,9 @@ export const Contact = () => {
         {socialLinks.map((socialLink, index) => (
           <a
             href={socialLink.link}
-            target="_blank"
             className="socialLink"
+            target="_blank"
+            rel="noreferrer"
             title="Opens in a new tab!"
             key={index}
           >
