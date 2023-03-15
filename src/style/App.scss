@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Overpass:wght@100;300;400&display=swap');
+
+$primary : #fff;
+$secondary : #0b0b0b;
+$tertiary : #e08762;
+$gray : #7b7b7b;
+
+$font1: 'Marcellus', serif;
+$font2: 'Overpass', sans-serif;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --title: 61.04px;
+    --body: 25px;
+    --misc: 16px;
+    --navHeight: 70px;
+    --containerPadding: 70px;
+    --container: 1140px;
+}
+
+.text.title,
+.text.body {
+    color: $secondary;
+    opacity: 0;
+    transform: translate3d(0, 36%, 0) skew(-6deg, -1deg);
+    transition: transform 1s ease;
+
+    span {
+        color: $tertiary;
+    }
+}
+
+.text.title {
+    font-family: $font1;
+    font-size: var(--title);
+}
+
+.text.body {
+    font-family: $font2;
+    font-size: var(--body);
+    font-weight: 300;
+    color: $gray;
+}
+
+// EFFECT ---------------------->
+.text.animate {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) skew(0, 0);
+}
+
+.container {
+    margin-top: var(--navHeight);
+    padding: 40px var(--containerPadding);
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    background-color: $primary;
+}
+.section {
+    width: 100%;
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+// RESPONSIVE --------------------------->
+
+@media only screen and (max-width: 1024px) {
+    body {
+        --containerPadding: 50px !important;
+        --container: 100% !important;
+        --title: 51.96px !important;
+        --body: 22.78px !important;
+    }
+
+    .container {
+        gap: 80px !important;
+    }
+
+    .section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        --title: 34.49px !important;
+        --misc: 20px !important;
+
+        // }
+        .container {
+            gap: 40px !important;
+        }
+
+        .section {
+            padding-top: 20px !important;
+            padding-bottom: 40px !important;
+        }
+    }  
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        --container: 100%;
+        --containerPadding: 20px !important;
+        --title: 25.63px !important;
+        --body: 16px !important;
+        --misc: 12.8px !important;
+        --navHeight: 50px !important;
+    }
+
+    .container {
+        gap: 40px !important;
+    }
+
+    .section {
+        padding-top: 20px !important;
+        padding-bottom: 40px !important;
+    }
+}

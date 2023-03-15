@@ -1,0 +1,67 @@
+@import url(./App.css);
+#contact {
+  flex-direction: column;
+}
+#contact .text {
+  text-align: left !important;
+}
+#contact .socialLink {
+  display: block;
+  align-items: center;
+  text-decoration: none;
+  color: #0b0b0b;
+  font-size: var(--body);
+  font-family: "Overpass", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+#contact .socialLink::after {
+  content: "-";
+  position: absolute;
+  transition: 0.3s ease-in-out;
+}
+#contact > :nth-child(1) .socialLink {
+  font-family: "Marcellus", serif;
+  font-size: var(--title);
+}
+#contact > :nth-child(1) .socialLink:hover {
+  color: #e08762;
+}
+#contact > :nth-child(3) {
+  display: flex;
+}
+#contact > :nth-child(3) .socialLink {
+  padding-right: 40px;
+}
+#contact > :nth-child(3) .socialLink::before {
+  content: "";
+  display: block;
+  position: absolute;
+  margin-top: calc(var(--body) + 5px);
+  height: 2px;
+  width: 0ch;
+  background: #e08762;
+  transition: 0.3s ease-in-out;
+}
+#contact > :nth-child(3) .socialLink:hover::before {
+  width: 7ch;
+  transition: 0.3s ease-in-out;
+}
+#contact .socialLink:hover::after {
+  transform: translate3d(5px, 0, 0);
+  transition: 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 480px) {
+  #contact > :nth-child(1) {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  #contact > :nth-child(1) a {
+    font-size: 20.25px !important;
+  }
+  #contact > :nth-child(3) {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}/*# sourceMappingURL=Contact.css.map */

@@ -1,0 +1,201 @@
+@import url(./App.css);
+
+$primary : #fff;
+$secondary : #0b0b0b;
+$tertiary : #e08762;
+$gray : #7b7b7b;
+
+$font1: 'Marcellus', serif;
+$font2: 'Overpass', sans-serif;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    --title : 61.04px;
+    --body : 25px;
+    --misc : 16px;
+    --navHeight : 70px;
+    --containerPadding : 70px;
+    --container : 1140px;
+}
+
+.title,.body{
+    color: $secondary;
+    transition: 1s ease-in-out;
+
+    span{
+        color: $tertiary;
+    }
+}
+.title{
+    font-family: $font1;
+    font-size: var(--title);
+}
+.body{
+    font-family: $font2;
+    font-size: var(--body);
+    font-weight: 300;
+    color: $gray;
+}
+
+// EFFECT ---------------------->
+.effect{
+    // transform:translate3d(0,36%,0) skew(-6deg,-1deg);
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+.effect.active{
+    transform:translate3d(0,0,0) skew(0,0);
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
+.container{
+    margin-top: var(--navHeight);
+    padding: 40px var(--containerPadding);
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    background-color: $primary;
+
+    .section{
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 80px;
+        border-bottom: 1px solid rgb(199, 199, 199);
+    }
+    footer{
+        width: 100%;
+        max-width: var(--container);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            display: flex;
+            gap: 20px;
+        }
+    }
+}
+
+
+//-------------------------------------------------------
+
+#about{
+    #me{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 80px;
+        img{
+            flex-basis: 60%;
+            aspect-ratio: 2/3;
+            filter: saturate(0%);
+        }
+        >div{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            h1,p{
+                text-align: left;
+            }
+        }
+    }
+    #experience{
+        div{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        >:nth-child(1){
+            align-self: flex-start;
+            position: sticky;
+            top: var(--navHeight);
+        }
+        .experiences{
+            gap: 40px;
+            font-family: $font2;
+
+            .exp{
+                gap: 10px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid $gray;
+                div{
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 0;
+
+                    :nth-child(1){
+                        font-weight: 600;
+                    }
+                }
+                h3{
+                    font-size: var(--body);
+                    color: $tertiary;
+                }
+                p{
+                    font-size: var(--misc);
+                    color: $gray;
+                }
+            }
+        }
+    }
+}
+
+
+//Responsive ------------------------>
+
+@media only screen and (max-width: 1024px) {
+    #about{
+        #me{
+            flex-direction: column-reverse !important;
+
+            img{
+                flex-basis: auto !important;
+                width: 100% !important;
+                gap: 20px !important;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 768px){
+    #experience{
+        flex-direction: column !important;
+
+        :nth-child(1){
+            position: relative !important;
+            top: auto !important;
+        }
+        .experiences{
+            gap: 20px !important;
+
+            >:last-child{
+                border-bottom: none !important;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body{
+        --container : 100% !important;
+        --containerPadding : 20px !important;
+        --title : 25.63px !important;
+        --body : 16px !important;
+        --misc : 12.8px !important;
+        --navHeight : 50px !important;
+    }
+
+}

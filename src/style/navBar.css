@@ -1,0 +1,72 @@
+@import url(../style/App.css);
+#navBar {
+  width: 100vw;
+  height: var(--navHeight);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--containerPadding);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.7568627451);
+}
+#navBar > div {
+  width: 100%;
+  max-width: var(--container);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#navBar > div > h2 {
+  font-family: "Overpass", sans-serif;
+  font-weight: bold;
+  color: #0b0b0b;
+  font-size: var(--misc);
+}
+#navBar > div > div {
+  display: flex;
+  gap: 40px;
+}
+#navBar > div > div div {
+  display: flex;
+  gap: 20px;
+}
+#navBar > div > div div a {
+  color: #0b0b0b;
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+}
+#navBar > div > div img {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  nav > div div div {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    height: 100vh !important;
+    width: 60vw !important;
+    flex-direction: column !important;
+    gap: 40px !important;
+    padding: 40px var(--containerPadding);
+    background-color: #0b0b0b !important;
+    transform: translateX(-60vw) !important;
+    transition: transform 0.3s ease-in-out;
+  }
+  nav > div div div a {
+    font-size: var(--title);
+    color: #fff !important;
+  }
+  nav > div div div.open {
+    transform: translateX(0) !important;
+  }
+  nav > div div img {
+    cursor: pointer !important;
+    display: block !important;
+  }
+}/*# sourceMappingURL=navBar.css.map */

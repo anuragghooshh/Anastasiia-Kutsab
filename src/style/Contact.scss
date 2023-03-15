@@ -1,0 +1,84 @@
+@import url(./App.css);
+
+$primary : #fff;
+$secondary : #0b0b0b;
+$tertiary : #e08762;
+$gray : #7b7b7b;
+
+$font1: 'Marcellus', serif;
+$font2: 'Overpass', sans-serif;
+
+#contact{
+    flex-direction: column;
+    .text{
+        text-align: left !important;
+    }
+    .socialLink{
+        display: block;
+        align-items: center;
+        text-decoration: none;
+        color: $secondary;
+        font-size: var(--body);
+        font-family: $font2;
+        transition: 0.3s ease-in-out;
+    }
+    .socialLink::after{
+        content: '-';
+        position: absolute;
+        transition: 0.3s ease-in-out;
+    }
+
+    >:nth-child(1){
+        .socialLink{
+            font-family: $font1;
+            font-size: var(--title);
+        }
+        .socialLink:hover{
+            color: $tertiary;
+        }
+    }
+
+    >:nth-child(3){
+        display: flex;
+
+        .socialLink{
+            padding-right: 40px;
+        }
+
+        .socialLink::before{
+            content: '';
+            display: block;
+            position: absolute;
+            margin-top: calc(var(--body) + 5px);
+            height: 2px;
+            width: 0ch;
+            background: $tertiary;
+            transition: 0.3s ease-in-out;
+        }
+        .socialLink:hover::before{
+            width: 7ch;
+            transition: 0.3s ease-in-out;
+        }
+    }
+    .socialLink:hover::after{
+        transform: translate3d(5px,0,0);
+        transition: 0.3s ease-in-out;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #contact{
+        >:nth-child(1){
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            a{
+                font-size: 20.25px !important;
+            }
+        }
+        >:nth-child(3){
+            flex-direction: column !important;
+            gap: 20px !important;
+        }
+    }
+}
