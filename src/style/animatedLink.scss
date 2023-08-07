@@ -1,0 +1,54 @@
+@use './designSystem.scss' as d;
+
+.animatedLink {
+    font-family: d.$font2;
+    font-size: var(--body);
+    font-weight: 600;
+    text-decoration: none;
+    color: d.$secondary;
+    position: relative;
+    display: block;
+    width: fit-content;
+    transition: .3s ease-in-out;
+
+    span {
+        font-weight: 400;
+        margin-left: 5px;
+        position: absolute;
+        transform: translate3d(0, 0, 0);
+        display: inline-block;
+        transition: .3s ease-in-out;
+    }
+}
+
+.animatedLink::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid d.$gray;
+    transform: scaleX(0);
+    transform-origin: right;
+    position: absolute;
+    transition: transform .3s ease-in-out;
+}
+
+@media(hover:hover) {
+    .animatedLink:hover {
+        color: d.$gray !important;
+        transition: .3s ease-in-out !important;
+
+        span {
+            color: d.$secondary !important;
+            transform: translate3d(2px, -2px, 0) !important;
+            transition: .3s ease-in-out !important;
+        }
+    }
+
+    .animatedLink:hover::after {
+        transform: scaleX(1) !important;
+        transform-origin: left !important;
+        transition-delay: 150ms !important;
+    }
+}

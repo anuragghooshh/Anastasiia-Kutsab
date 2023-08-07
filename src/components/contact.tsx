@@ -1,33 +1,38 @@
-import '../style/Contact.css';
-
-import { socialLinks, aboutContact, email } from '../script/seed';
 import AnimatedText from './AnimatedText';
+import AnimatedLink from './animatedLink';
+
+import data from '../data/data.json'
+
+import '../style/Contact.scss';
+
+interface socialLinks{
+  name:string,
+  link:string
+}
 
 export const Contact = () => {
   return (
     <div id="contact" className="section">
       <div>
-        <p>Let's connect today</p>
-        <a className="socialLink" href={`mailto:${email}`} target="_blank" rel="noreferrer" title='Prompts to send a mail!'>
-          {email}
-        </a>
+        <p className='text'>Let's connect today</p>
+        <AnimatedLink
+          title="Prompts to send a mail!"
+          link={`mailto:${data.email}`}
+          text={data.email}
+        />
       </div>
       <AnimatedText
         type="body"
-        text={aboutContact}
+        text={data.aboutContact}
       />
       <div>
-        {socialLinks.map((socialLink, index) => (
-          <a
-            href={socialLink.link}
-            className="socialLink"
-            target="_blank"
-            rel="noreferrer"
-            title="Opens in a new tab!"
+        {data.socialLinks.map((socialLink:socialLinks, index) => (
+          <AnimatedLink
+            link={socialLink.link}
+            text={socialLink.name}
+            title='Opens in a new tab!'
             key={index}
-          >
-            {socialLink.name}
-          </a>
+          />
         ))}
       </div>
     </div>

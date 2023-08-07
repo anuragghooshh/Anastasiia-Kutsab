@@ -1,45 +1,22 @@
-@import url(./App.css);
-
-$primary : #fff;
-$secondary : #0b0b0b;
-$tertiary : #e08762;
-$gray : #7b7b7b;
-
-$font1: 'Marcellus', serif;
-$font2: 'Overpass', sans-serif;
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body{
-    --title : 61.04px;
-    --body : 25px;
-    --misc : 16px;
-    --navHeight : 70px;
-    --containerPadding : 70px;
-    --container : 1140px;
-}
+@use './designSystem.scss' as d;
 
 .title,.body{
-    color: $secondary;
+    color: d.$secondary;
     transition: 1s ease-in-out;
 
     span{
-        color: $tertiary;
+        color: d.$tertiary;
     }
 }
 .title{
-    font-family: $font1;
+    font-family: d.$font1;
     font-size: var(--title);
 }
 .body{
-    font-family: $font2;
+    font-family: d.$font2;
     font-size: var(--body);
     font-weight: 300;
-    color: $gray;
+    color: d.$gray;
 }
 
 // EFFECT ---------------------->
@@ -60,7 +37,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 80px;
-    background-color: $primary;
+    background-color: d.$primary;
 
     .section{
         width: 100%;
@@ -124,12 +101,12 @@ body{
         }
         .experiences{
             gap: 40px;
-            font-family: $font2;
+            font-family: d.$font2;
 
             .exp{
                 gap: 10px;
                 padding-bottom: 20px;
-                border-bottom: 1px solid $gray;
+                border-bottom: 1px solid d.$gray;
                 div{
                     flex-direction: row;
                     justify-content: space-between;
@@ -141,11 +118,11 @@ body{
                 }
                 h3{
                     font-size: var(--body);
-                    color: $tertiary;
+                    color: d.$tertiary;
                 }
                 p{
                     font-size: var(--misc);
-                    color: $gray;
+                    color: d.$gray;
                 }
             }
         }

@@ -1,14 +1,30 @@
-import AnastasiiaTall from '../resources/AnastasiiaTall.jpeg';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import { Footer } from './footer';
 import AnimatedText from './AnimatedText';
-import { experience, aboutMe } from '../script/seed';
 import { Contact } from './contact';
 
+import AnastasiiaTall from '../resources/AnastasiiaTall.jpeg';
 
-import '../style/About.css';
+import data from '../data/data.json'
+
+import '../style/About.scss';
+
+interface experience{
+  role:string,
+  duration:string,
+  companyName:string,
+  brief:string,
+}
 
 const About = () => {
+  const location = useLocation();
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[location]);
+
   return (
     <div className='container' id='about'>
       <div className="section" id='me'>
@@ -19,7 +35,7 @@ const About = () => {
             type="title"
           />
           <AnimatedText
-            text={aboutMe}
+            text={data.aboutMe}
             type="body"
           />
         </div>
@@ -31,13 +47,13 @@ const About = () => {
             type="title"
           />
           <AnimatedText
-            text="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+            text={data.aboutExperience}
             type="body"
           />
         </div>
         <div className="experiences">
           {
-            experience.map((exp,index)=>(
+            data.experience.map((exp:experience,index)=>(
               <div className="exp" key={index}>
                 <div>
                   <p>{exp.companyName}</p>

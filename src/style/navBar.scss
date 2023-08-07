@@ -1,12 +1,4 @@
-@import url(../style/App.css);
-
-$primary : #fff;
-$secondary : #0b0b0b;
-$tertiary : #e08762;
-$gray : #7b7b7b;
-
-$font1: 'Marcellus', serif;
-$font2: 'Overpass', sans-serif;
+@use './designSystem.scss' as d;
 
 #navBar {
     width: 100vw;
@@ -30,9 +22,9 @@ $font2: 'Overpass', sans-serif;
         align-items: center;
 
         >h2 {
-            font-family: $font2;
+            font-family: d.$font2;
             font-weight: bold;
-            color: $secondary;
+            color: d.$secondary;
             font-size: var(--misc);
         }
 
@@ -45,9 +37,9 @@ $font2: 'Overpass', sans-serif;
                 gap: 20px;
 
                 a {
-                    color: $secondary;
+                    color: d.$secondary;
                     text-decoration: none;
-                    font-family: $font2;
+                    font-family: d.$font2;
                 }
             }
 
@@ -71,13 +63,13 @@ $font2: 'Overpass', sans-serif;
                     flex-direction: column !important;
                     gap: 40px !important;
                     padding: 40px var(--containerPadding);
-                    background-color: $secondary !important;
+                    background-color: d.$secondary !important;
                     transform: translateX(-60vw) !important;
                     transition: transform 0.3s ease-in-out;
 
                     a {
                         font-size: var(--title);
-                        color: $primary !important;
+                        color: d.$primary !important;
                     }
                 }
 

@@ -1,0 +1,71 @@
+{
+    "bio":"UX Designer with a passion for creating user-centered designs. With experience and expertise in user research and prototyping, I strive to improve the overall user experience with every project.",
+    "projects":[
+        {
+            "projectTitle" : "Web Platform for Table Booking",
+            "projectLink" : "https://www.behance.net/gallery/148101589/Web-Platform-for-Table-Booking",
+            "projectThumb" : "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/11d4e1148101589.Y3JvcCwzMDg4LDI0MTYsMjM3LDA.png"
+        },
+        {
+            "projectTitle" : "Meridian Travel App",
+            "projectLink" : "https://www.behance.net/gallery/140864629/Meridian-Travel-App",
+            "projectThumb" : "https://mir-s3-cdn-cf.behance.net/projects/max_808/e61eae140864629.Y3JvcCwxMzEzLDEwMjcsNzEsMA.png"
+        },
+        {
+            "projectTitle" : "Radial",
+            "projectLink" : "https://www.behance.net/gallery/123748905/Radial",
+            "projectThumb" : "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/58c93e123748905.Y3JvcCwxNTQ5LDEyMTIsMjYsMA.png"
+        },
+        {
+            "projectTitle" : "GazeboApp",
+            "projectLink" : "https://www.behance.net/gallery/109990297/GazeboApp",
+            "projectThumb" : "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/eb74a5109990297.Y3JvcCw5NjksNzU4LDEwNyww.png"
+        }
+    ],
+    "aboutProjects":"A selection of projects that demonstrate my skills and experience. My goal is to create user-centered designs that are both beautiful and functional.",
+    "aboutContact":"Feel free to reach me out",
+    "email":"kutsabnone@gmail.com",
+    "socialLinks":[
+        {
+            "name" : "Instagram",
+            "link" : "https://www.instagram.com/anastasiia_ktsb/"
+        },
+        {
+            "name" : "Behance",
+            "link" : "https://www.behance.net/kutsabnone0760"
+        },
+        {
+            "name" : "LinkedIn",
+            "link" : "https://ua.linkedin.com/in/anastasiia-kutsab-a048a71b3"
+        }
+    ],
+    "aboutMe":"I am a passionate UI/UX designer with a strong focus on user-centered design. I have a proven track record of creating user-friendly and visually appealing designs that meet the needs of users and businesses. I am also an experienced researcher and usability tester, and I am always looking for new ways to improve the user experience.",
+    "aboutExperience":"A selection of relevant professional experience.",
+    "experience":[
+        {
+            "role" : "Product Designer",
+            "duration" : "Since Jun 2023",
+            "companyName" : "Xpand Ukraine",
+            "brief" : "Led the design of a new digital product from ideation to launch and also conducted user research and usability testing to ensure that the product met user needs."
+        },
+        {
+            "role" : "UI/UX Designer",
+            "duration" : "2021-2023",
+            "companyName" : "Inoxoft",
+            "brief" : "Designed user interfaces for a new digital products, creating wireframes and prototypes to test the designs with users."
+        },
+        {
+            "role" : "UX Designer",
+            "duration" : "2020-2021",
+            "companyName" : "Fast Rewards",
+            "brief" : "Created wireframes and prototypes to test the design with users, working with developers to implement the design."
+        },
+        {
+            "role" : "UX Designer",
+            "duration" : "2019-2020",
+            "companyName" : "Freelancer.com",
+            "brief" : "Designed user experience for digital products, defining the user journey and creating user flows."
+        }
+    ]
+
+}

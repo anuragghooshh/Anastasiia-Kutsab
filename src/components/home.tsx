@@ -1,14 +1,30 @@
-import { projects, Bio, aboutProjects } from '../script/seed';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
-import Anastasiia from '../resources/Anastasiia.jpeg'
 import { Footer } from './footer';
-
-import '../style/Home.css';
+import { Contact } from './contact';
 import AnimatedText from './AnimatedText';
 import AnimatedProject from './animatedProject';
-import { Contact } from './contact';
+
+import Anastasiia from '../resources/Anastasiia.jpeg'
+
+import data from '../data/data.json';
+
+import '../style/Home.scss';
+
+interface projects{
+  projectTitle:string,
+  projectLink:string,
+  projectThumb:string,
+}
 
 const Home = () => {
+
+  const location = useLocation();
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[location]);
 
   return (
     <div className='container' id='home'>
@@ -20,7 +36,7 @@ const Home = () => {
             />
             <AnimatedText
               type="body" 
-              text={Bio}
+              text={data.bio}
             />
         </div>
         <div id="projects" className="section">
@@ -30,10 +46,10 @@ const Home = () => {
             />
             <AnimatedText
               type="body"
-              text={aboutProjects}
+              text={data.aboutProjects}
             />
             <div>
-              {projects.map((project,index)=>(
+              {data.projects.map((project:projects,index)=>(
                 <a className="item" href={project.projectLink} title='Opens in a new tab!' target='_blank' rel='noreferrer' key={index}>
                   <div><AnimatedProject image={project.projectThumb}/></div>
                   <h3>{project.projectTitle}</h3>

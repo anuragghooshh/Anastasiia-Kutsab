@@ -2,12 +2,11 @@ import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ham from '../resources/ham.svg';
 
-import '../style/navBar.css';
+import '../style/navBar.scss';
 
 const NavBar  = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = (e:any) => {
+  const handleClick = (e:any)=>{
     setIsOpen(!isOpen);
   }
 
